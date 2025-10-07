@@ -135,6 +135,7 @@ function setTheme(mode) {
     themeIcon.style.transform = 'rotate(0deg)';
   }
   localStorage.setItem('theme', mode);
+  updateFavicon(); // This makes the icon change too!
 }
 
 floatingToggle.addEventListener('click', () => {
