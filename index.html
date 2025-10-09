@@ -311,9 +311,23 @@
       </div>
       <div>
         <h5 class="font-semibold mb-2">Stay Connected</h5>
-        <form class="space-y-2">
-          <input type="email" placeholder="Your email" class="w-full p-2 rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600" />
-          <button type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-red-500 transition">Subscribe</button>
+        <form role="form" aria-label="Newsletter Subscription Form" autocomplete="on" class="space-y-2">
+          <input
+            type="email"
+            id="newsletter-email"
+            name="newsletter-email"
+            placeholder="Your email"
+            autocomplete="email"
+            aria-label="Your email address"
+            required
+            class="w-full p-2 rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600"
+          />
+          <button
+            type="submit"
+            class="bg-primary text-white px-4 py-2 rounded hover:bg-red-500 transition"
+          >
+            Subscribe
+          </button>
         </form>
       </div>
       <div>
