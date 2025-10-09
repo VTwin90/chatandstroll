@@ -62,7 +62,7 @@
     <div class="bg-white/70 dark:bg-black/50 p-8 rounded-xl shadow-xl backdrop-blur-md" data-aos="fade-up">
       <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Walk. Talk. Connect.</h2>
       <p class="text-lg md:text-xl mb-6">Gentle paths to genuine connection — join a circle near you.</p>
-      <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-red-500 transition">Join a Circle</a>
+      <a href="#match" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-red-500 transition">Join a Circle</a>
     </div>
   </section>
 
@@ -123,10 +123,10 @@
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-3xl font-bold mb-6">Find Your Match</h3>
       <p class="text-lg mb-8">Let AI gently pair you with a circle who shares your pace, mood, and conversational style.</p>
-      <form id="match-form" class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg space-y-6 dark:text-gray-800">
+      <form id="match-form" role="form" aria-label="AI Match Form" autocomplete="on" class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg space-y-6 dark:text-gray-800">
         <div>
           <label for="mood" class="block mb-2 font-medium dark:text-gray-100">Your Mood</label>
-          <select id="mood" name="mood" class="w-full p-3 rounded-lg border" required>
+          <select id="mood" name="mood" autocomplete="off" aria-label="Mood selection" class="w-full p-3 rounded-lg border" required>
             <option value="low">I feel low</option>
             <option value="curious">I’m curious</option>
             <option value="reflective">I want to reflect</option>
@@ -135,7 +135,7 @@
         </div>
         <div>
           <label for="style" class="block mb-2 font-medium dark:text-gray-100">Conversation Style</label>
-          <select id="style" name="style" class="w-full p-3 rounded-lg border" required>
+          <select id="style" name="style" autocomplete="off" aria-label="Conversation style" class="w-full p-3 rounded-lg border" required>
             <option value="deep">Deep & thoughtful</option>
             <option value="playful">Playful & fun</option>
             <option value="quiet">Quiet & gentle</option>
@@ -143,15 +143,15 @@
         </div>
         <div>
           <label for="location" class="block mb-2 font-medium dark:text-gray-100">Preferred Location</label>
-          <input type="text" id="location" name="location" placeholder="e.g. Frogner Park, Oslo (type exactly or close)" class="w-full p-3 rounded-lg border" required />
+          <input type="text" id="location" name="location" autocomplete="address-level2" aria-label="Preferred location" placeholder="e.g. Frogner Park, Oslo (type exactly or close)" class="w-full p-3 rounded-lg border" required />
         </div>
         <div>
           <label for="time" class="block mb-2 font-medium dark:text-gray-100">Preferred Time of Day</label>
-          <input type="time" id="time" name="time" class="w-full p-3 rounded-lg border" required />
+          <input type="time" id="time" name="time" autocomplete="off" aria-label="Preferred time" class="w-full p-3 rounded-lg border" required />
         </div>
         <div>
           <label for="day" class="block mb-2 font-medium dark:text-gray-100">Preferred Day</label>
-          <select id="day" name="day" class="w-full p-3 rounded-lg border" required>
+          <select id="day" name="day" autocomplete="off" aria-label="Preferred day" class="w-full p-3 rounded-lg border" required>
             <option value="today">Today</option>
             <option value="tomorrow">Tomorrow</option>
             <option value="weekend">This Weekend</option>
@@ -160,7 +160,7 @@
         </div>
         <div>
           <label for="interests" class="block mb-2 font-medium dark:text-gray-100">Interests</label>
-          <input type="text" id="interests" name="interests" placeholder="Books, nature, philosophy..." class="w-full p-3 rounded-lg border" required />
+          <input type="text" id="interests" name="interests" autocomplete="on" aria-label="Your interests" placeholder="Books, nature, philosophy..." class="w-full p-3 rounded-lg border" required />
         </div>
         <div class="flex justify-center">
           <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-red-500 transition">
@@ -168,6 +168,7 @@
           </button>
         </div>
       </form>
+
       <div id="match-result" class="mt-6 text-lg font-medium text-primary"></div>
     </div>
     <div id="solo-prompts" class="max-w-3xl mx-auto px-4 py-12 text-center hidden">
@@ -263,18 +264,18 @@
   <!-- Contact Section -->
   <section id="contact" class="max-w-4xl mx-auto px-4 py-20" data-aos="fade-up">
     <h3 class="text-3xl font-bold mb-6 text-center">Get in Touch</h3>
-    <form action="#" method="POST" class="bg-white dark:bg-darkBg p-8 rounded-xl shadow-lg space-y-6">
+    <form action="#" method="POST" role="form" aria-label="Contact Form" autocomplete="on" class="bg-white dark:bg-darkBg p-8 rounded-xl shadow-lg space-y-6">
       <div>
         <label for="name" class="block mb-2 font-medium">Name</label>
-        <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" />
+        <input type="text" id="name" name="name" autocomplete="name" aria-label="Your name" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" />
       </div>
       <div>
         <label for="email" class="block mb-2 font-medium">Email</label>
-        <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" />
+        <input type="email" id="email" name="email" autocomplete="email" aria-label="Your email address" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" />
       </div>
       <div>
         <label for="message" class="block mb-2 font-medium">Message</label>
-        <textarea id="message" name="message" rows="4" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800"></textarea>
+        <textarea id="message" name="message" rows="4" autocomplete="off" aria-label="Your message" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800"></textarea>
       </div>
       <div class="flex justify-center">
         <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-red-500 transition">
