@@ -2,6 +2,7 @@
   background-image: url('https://cdn.pixabay.com/photo/2017/08/01/20/52/happy-holidays-2567915_1280.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: scroll; /* default for mobile */
 }
 
 .theme-toggle {
@@ -42,4 +43,10 @@
   color: #065f46;
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media (min-width: 540px) {
+  .parallax {
+    background-attachment: fixed; /* enable parallax on desktop */
+  }
 }
