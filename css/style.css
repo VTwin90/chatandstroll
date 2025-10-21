@@ -45,6 +45,21 @@
   font-weight: 500;
 }
 
+.modal-box.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#modalIcon.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media (min-width: 540px) {
   .parallax {
     background-attachment: fixed; /* enable parallax on desktop */
