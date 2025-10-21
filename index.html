@@ -39,11 +39,11 @@
       </h1>
       <nav>
         <ul class="hidden md:flex space-x-6 font-medium">
-          <li><a href="#about" class="hover:text-primary">About</a></li>
-          <li><a href="#features" class="hover:text-primary">Features</a></li>
-          <li><a href="#match" class="hover:text-primary">Find a Match</a></li>
-          <li><a href="#how" class="hover:text-primary">How It Works</a></li>
-          <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+          <li><a href="#about" data-section="about" class="hover:text-primary transition-colors duration-300">About</a></li>
+          <li><a href="#features" data-section="features" class="hover:text-primary transition-colors duration-300">Features</a></li>
+          <li><a href="#match" data-section="match" class="hover:text-primary transition-colors duration-300">Find a Match</a></li>
+          <li><a href="#how" data-section="how" class="hover:text-primary transition-colors duration-300">How It Works</a></li>
+          <li><a href="#contact" data-section="contact" class="hover:text-primary transition-colors duration-300">Contact</a></li>
         </ul>
         <button id="menu-btn" class="md:hidden text-3xl transition-transform duration-300">
             <span id="menu-icon">&#9776;</span>
@@ -160,7 +160,6 @@
           </button>
         </div>
       </form>
-
       <div id="match-result" class="mt-6 text-lg font-medium text-primary"></div>
     </div>
     <div id="solo-prompts" class="max-w-3xl mx-auto px-4 py-12 text-center hidden">
@@ -362,6 +361,7 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="js/scrollspy.js" defer></script>
   <script src="js/data.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/main.js"></script>
