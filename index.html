@@ -264,7 +264,7 @@
   <!-- Contact Section -->
   <section id="contact" class="max-w-4xl mx-auto px-4 py-20" data-aos="fade-up">
     <h3 class="text-3xl font-bold mb-6 text-center">Get in Touch</h3>
-    <form action="#" method="POST" role="form" aria-label="Contact Form" autocomplete="on" class="bg-white dark:bg-darkBg p-8 rounded-xl shadow-lg space-y-6">
+    <form id="contactForm" method="POST" role="form" aria-label="Contact Form" autocomplete="on" class="bg-white dark:bg-darkBg p-8 rounded-xl shadow-lg space-y-6">
       <div>
         <label for="name" class="block mb-2 font-medium">Name</label>
         <input type="text" id="name" name="name" autocomplete="name" aria-label="Your name" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" />
@@ -277,6 +277,10 @@
         <label for="message" class="block mb-2 font-medium">Message</label>
         <textarea id="message" name="message" rows="4" autocomplete="off" aria-label="Your message" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800"></textarea>
       </div>
+
+      <!-- Honeypot field -->
+      <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
       <div class="flex justify-center">
         <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-red-500 transition">
           Send Message
@@ -284,6 +288,17 @@
       </div>
     </form>
   </section>
+
+  <!-- Modal -->
+  <div id="feedbackModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
+    <div class="bg-white dark:bg-darkBg p-6 rounded-xl shadow-xl max-w-md text-center outline-none" data-aos="zoom-in" tabindex="-1">
+      <h3 id="modalTitle" class="text-xl font-bold mb-2">Message sent!</h3>
+      <p id="modalText" class="text-gray-700 dark:text-gray-300">Thanks for reaching out — I’ll get back to you soon.</p>
+      <button onclick="closeModal()" class="mt-4 bg-primary text-white px-4 py-2 rounded-full hover:bg-red-500 transition" aria-label="Close modal">
+        Close
+      </button>
+    </div>
+  </div>
 
   <!-- Floating Dark Mode Toggle -->
   <div class="theme-toggle bg-white dark:bg-gray-800" id="floating-toggle" title="Toggle theme">
@@ -347,8 +362,11 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/email.js"></script> 
+  <script src="js/contact.js"></script>
 </body>
 </html>
