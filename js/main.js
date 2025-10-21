@@ -1,4 +1,12 @@
 AOS.init();
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.onbeforeunload = () => window.scrollTo(0, 0);
+
+
 let userCreatedWalks = [];
 
 function generateWalk({ mood, style, interests, location, time, day }) {
