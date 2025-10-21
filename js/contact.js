@@ -11,7 +11,7 @@ function showModal(title, message, autoDismiss = false) {
   if (autoDismiss) {
     setTimeout(() => {
       closeModal();
-    }, 4000);
+    }, 7000);
   }
 }
 
