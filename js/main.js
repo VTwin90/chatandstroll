@@ -6,7 +6,6 @@ if ("scrollRestoration" in history) {
 
 window.onbeforeunload = () => window.scrollTo(0, 0);
 
-
 let userCreatedWalks = [];
 
 function generateWalk({ mood, style, interests, location, time, day }) {
@@ -125,11 +124,20 @@ const menuIcon = document.getElementById('menu-icon');
 
 menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
-
   const isOpen = !mobileMenu.classList.contains('hidden');
   menuIcon.innerHTML = isOpen ? '&times;' : '&#9776;';
+  menuBtn.setAttribute('aria-expanded', isOpen);
 });
 
+// Close mobile menu when a nav link is clicked
+const mobileLinks = mobileMenu.querySelectorAll("a");
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    menuIcon.innerHTML = "&#9776;"; // Reset icon to hamburger
+  });
+});
 
 const floatingToggle = document.getElementById('floating-toggle');
 const themeIcon = document.getElementById('theme-icon');
