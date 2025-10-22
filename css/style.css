@@ -1,3 +1,4 @@
+/* Parallax background — scrolls on mobile, fixed on desktop */
 .parallax {
   background-image: url('https://cdn.pixabay.com/photo/2017/08/01/20/52/happy-holidays-2567915_1280.jpg');
   background-size: cover;
@@ -5,6 +6,7 @@
   background-attachment: scroll; /* default for mobile */
 }
 
+/* Floating theme toggle — fixed position with hover animation */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
@@ -22,12 +24,14 @@
   transform: rotate(20deg);
 }
 
+/* Theme icon — rotates on toggle */
 .theme-icon {
   width: 24px;
   height: 24px;
   transition: transform 0.5s ease;
 }
 
+/* Walk creation feedback — gentle grow-in animation */
 @keyframes fadeInGrow {
   0% { opacity: 0; transform: scale(0.95); }
   100% { opacity: 1; transform: scale(1); }
@@ -45,6 +49,7 @@
   font-weight: 500;
 }
 
+/* Modal transitions */
 .modal-box.show {
   opacity: 1;
   transform: scale(1);
